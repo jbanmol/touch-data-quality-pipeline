@@ -1,0 +1,5 @@
+Touchdata_id,accx,accy,accz,color,completionPerc,event_index,fingerId,time,touchPhase,x,y,zone,outlier,imputed,duplicate,invalid_phase
+1,0.0137634277,0.7011719,-0.684661865,RedDefault,0.0,0,0,3303.7417,Began,1877.0,108.0,Outside,True,False,False,False
+1,0.0178070068,0.7031708,-0.6923065,RedDefault,0.0,1,0,3303.77515,Stationary,1877.0,108.0,Outside,False,False,False,False
+1,0.0131378174,0.71661377,-0.7038727,RedDefault,0.0,2,0,3303.80835,Moved,1846.0,114.0,Outside,False,False,False,False
+1,0.00196838379,0.711212158,-0.6936035,RedDefault,0.0,3,0,3303.8418,Moved,1839.0,145.999969,Outside,False,False,False,False

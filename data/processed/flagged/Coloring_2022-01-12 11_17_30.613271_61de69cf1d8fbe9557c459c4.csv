@@ -1,0 +1,5 @@
+Touchdata_id,event_index,x,y,time,touchPhase,fingerId,color,completionPerc,zone,flags,quality_score,interaction_type,anomaly_flag,research_suitability,     ,     fingerId,     seqId,     startTime,     endTime,     durationSec,     nPoints,     flags
+1,0,1877.0,108.0,3303.7417,Began,0,RedDefault,0.0,Outside,missing_Ended,70,Quick,Technical,Behavioral,,0,1,3303.7417,,,4,missing_Ended
+1,1,1877.0,108.0,3303.7751,Stationary,0,RedDefault,0.0,Outside,missing_Ended,70,Quick,Technical,Behavioral,,,,,,,,
+1,2,1846.0,114.0,3303.8083,Moved,0,RedDefault,0.0,Outside,missing_Ended,70,Quick,Technical,Behavioral,,,,,,,,
+1,3,1839.0,145.99997,3303.8418,Moved,0,RedDefault,0.0,Outside,missing_Ended,70,Quick,Technical,Behavioral,,,,,,,,
