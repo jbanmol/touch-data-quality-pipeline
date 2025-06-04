@@ -134,6 +134,9 @@ data/outputs/reports/*.txt
 *.pkl
 *.joblib
 
+# Large data files
+data/processed/enhanced_json/processing_summary.json
+
 # Credentials and sensitive files
 config/credentials.json
 *.key
