@@ -42,7 +42,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Import ML consolidated enhancer
+# Import ML enhancers (try enhanced first, fallback to consolidated)
+try:
+    from ..ml.ml_integration import enhance_dataframe_with_advanced_ml
+    ML_ENHANCED_AVAILABLE = True
+    logger.info("Enhanced ML Integration system loaded successfully")
+except ImportError as e:
+    logger.warning(f"Enhanced ML Integration not available: {e}")
+    ML_ENHANCED_AVAILABLE = False
+
 try:
     from ..ml.consolidated_enhancer import ConsolidatedMLEnhancer
     ML_ENHANCER_AVAILABLE = True
@@ -1321,8 +1329,27 @@ def process_coloring_data(df, input_path, output_path):
     seq_metrics = compute_sequence_metrics(df)
     df, seq_metrics = apply_flag_rules(df, seq_metrics)
 
-    # Add ML-based consolidated metadata columns
-    if ML_ENHANCER_AVAILABLE:
+    # Add ML-based consolidated metadata columns (try enhanced first)
+    if ML_ENHANCED_AVAILABLE:
+        try:
+            logger.info("Adding enhanced ML metadata columns...")
+            # Run algorithm comparison on first file or periodically
+            run_comparison = not os.path.exists("ML/models/algorithm_comparison_results.json")
+            df = enhance_dataframe_with_advanced_ml(df, run_algorithm_comparison=run_comparison)
+            logger.info("Successfully added enhanced ML metadata")
+        except Exception as e:
+            logger.warning(f"Enhanced ML enhancement failed: {e}")
+            logger.info("Falling back to consolidated ML enhancer")
+            # Fallback to consolidated enhancer
+            if ML_ENHANCER_AVAILABLE:
+                try:
+                    ml_enhancer = ConsolidatedMLEnhancer()
+                    df = ml_enhancer.enhance_dataframe(df)
+                    logger.info("Successfully added consolidated ML metadata")
+                except Exception as e2:
+                    logger.warning(f"Consolidated ML enhancement also failed: {e2}")
+                    logger.info("Continuing without ML metadata")
+    elif ML_ENHANCER_AVAILABLE:
         try:
             logger.info("Adding ML consolidated metadata columns...")
             ml_enhancer = ConsolidatedMLEnhancer()
@@ -1779,8 +1806,27 @@ def process_tracing_data(df, input_path, output_path):
     # Apply Tracing-specific flag rules
     df, seq_metrics = apply_tracing_flag_rules(df, seq_metrics)
 
-    # Add ML-based consolidated metadata columns
-    if ML_ENHANCER_AVAILABLE:
+    # Add ML-based consolidated metadata columns (try enhanced first)
+    if ML_ENHANCED_AVAILABLE:
+        try:
+            logger.info("Adding enhanced ML metadata columns...")
+            # Run algorithm comparison on first file or periodically
+            run_comparison = not os.path.exists("ML/models/algorithm_comparison_results.json")
+            df = enhance_dataframe_with_advanced_ml(df, run_algorithm_comparison=run_comparison)
+            logger.info("Successfully added enhanced ML metadata")
+        except Exception as e:
+            logger.warning(f"Enhanced ML enhancement failed: {e}")
+            logger.info("Falling back to consolidated ML enhancer")
+            # Fallback to consolidated enhancer
+            if ML_ENHANCER_AVAILABLE:
+                try:
+                    ml_enhancer = ConsolidatedMLEnhancer()
+                    df = ml_enhancer.enhance_dataframe(df)
+                    logger.info("Successfully added consolidated ML metadata")
+                except Exception as e2:
+                    logger.warning(f"Consolidated ML enhancement also failed: {e2}")
+                    logger.info("Continuing without ML metadata")
+    elif ML_ENHANCER_AVAILABLE:
         try:
             logger.info("Adding ML consolidated metadata columns...")
             ml_enhancer = ConsolidatedMLEnhancer()
