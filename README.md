@@ -123,9 +123,6 @@ python tests/performance_test.py
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is part of the Kidaura research platform. Please contact the maintainers for licensing information.
 
 ## 👥 Authors
 
