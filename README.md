@@ -1,6 +1,6 @@
 # Kidaura Touch Data Analysis System
 
-Advanced touch data analysis system with ML enhancement, data validation, and interactive visualizations for Kidaura research platform.
+Advanced touch data analysis system with ML enhancement, data validation, and interactive visualizations for a research platform.
 
 ## 🚀 Features
 
@@ -124,14 +124,9 @@ python tests/performance_test.py
 5. Open a Pull Request
 
 
-## 👥 Authors
-
-- **jbanmol** - *Initial work and development*
-
 ## 🙏 Acknowledgments
 
-- Kidaura research team for requirements and testing
-- Contributors to the touch data analysis methodology
+- research team for requirements and testing
 - Open source libraries that made this project possible
 
 ---
