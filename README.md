@@ -1,134 +1,64 @@
-# Kidaura Touch Data Analysis System
+# Touch Data Quality Pipeline
 
-Advanced touch data analysis system with ML enhancement, data validation, and interactive visualizations for a research platform.
+Data engineering and ML quality pipeline for touch-interaction research data. The system processes raw touch records, validates event sequences, engineers quality features, exports clean datasets, and produces visual reports for downstream research workflows.
 
-## 🚀 Features
+## What This Demonstrates
 
-- **Complete Data Processing Pipeline**: Automated processing of touch data from JSON to CSV with comprehensive validation
-- **ML-Enhanced Analysis**: Advanced machine learning pipeline with feature engineering and quality assessment
-- **Data Validation & Flagging**: Sophisticated validation system with Touchdata_id-based sequence validation
-- **Google Sheets Integration**: Seamless export to Google Sheets with automatic sharing capabilities
-- **Interactive Visualizations**: HTML-based interactive visualizations and comprehensive documentation
-- **Unified Launcher System**: Easy-to-use command-line interface for all system components
+- End-to-end data processing from raw JSON/CSV into analysis-ready tables
+- Validation and flagging for sequence and quality issues
+- ML-assisted quality assessment and interaction-type classification
+- Google Sheets export for collaborator-friendly review
+- Interactive HTML reports for exploratory analysis
+- Modular project structure with tests, docs, config, scripts, and source packages
 
-## 📁 Project Structure
+## Pipeline
 
-```
-├── src/                    # Core source code
-│   ├── core/              # Data processing engine
-│   ├── ml/                # Machine learning components
-│   ├── export/            # Google Sheets export functionality
-│   ├── utils/             # Utility functions
-│   └── visualization/     # Interactive visualization tools
-├── ML/                    # Standalone ML pipeline
-├── data/                  # Data storage (raw, processed, outputs)
-├── tests/                 # Comprehensive test suite
-├── docs/                  # Documentation and guides
-├── config/                # Configuration files
-└── scripts/               # Utility scripts
+```text
+Raw touch data
+  -> ingestion and schema handling
+  -> validation and quality flags
+  -> feature engineering
+  -> ML-enhanced quality assessment
+  -> CSV / Google Sheets / HTML report outputs
 ```
 
-## 🛠️ Installation
+## Core Features
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/jbanmol/Kidaura-Touchdata-Analysis.git
-   cd Kidaura-Touchdata-Analysis
-   ```
+| Feature | Description |
+|---|---|
+| Data processing | Converts raw interaction records into clean tabular outputs |
+| Validation | Flags sequence, identifier, and behavioral anomalies |
+| ML enhancement | Adds quality scores and interaction-type labels |
+| Export | Supports CSV and Google Sheets workflows |
+| Visualization | Generates interactive HTML reports |
+| Testing | Includes integration, ML, and performance tests |
 
-2. **Set up virtual environment**:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+## Quick Start
 
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure Google Sheets** (optional):
-   - Place your Google Sheets credentials in `config/credentials.json`
-   - Follow the setup guide in `docs/user_guide/`
-
-## 🚀 Quick Start
-
-### Using the Unified Launcher
 ```bash
+git clone https://github.com/jbanmol/touch-data-quality-pipeline.git
+cd touch-data-quality-pipeline
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 python app.py
 ```
 
-### Direct Component Access
-```bash
-# Data processing
-python src/core/data_processor.py
+## Repository Structure
 
-# ML enhancement
-python src/ml/consolidated_enhancer.py
+| Path | Purpose |
+|---|---|
+| `src/core/` | Main data processing engine |
+| `src/ml/` | ML quality assessment components |
+| `src/export/` | Google Sheets and file export utilities |
+| `src/visualization/` | Interactive report generation |
+| `tests/` | Integration, ML, and performance checks |
+| `docs/` | User and developer documentation |
 
-# Google Sheets export
-python src/export/google_sheets.py
+## Tech Stack
 
-# Interactive visualizations
-python src/visualization/html_interactive.py
-```
+Python, pandas, scikit-learn, Google Sheets API, HTML reports, pytest.
 
-## 📊 Data Processing Pipeline
+## Professional Focus
 
-1. **Raw Data Input**: JSON/CSV touch data files
-2. **Validation & Flagging**: Sequence validation with Touchdata_id support
-3. **ML Enhancement**: Feature engineering and quality assessment
-4. **Export Options**: CSV, Google Sheets, interactive HTML
-5. **Visualization**: Interactive charts and data exploration tools
-
-## 🧠 Machine Learning Features
-
-- **Quality Score**: 0-100 weighted metric for data quality assessment
-- **Interaction Type**: Classification (Precise/Quick/Hesitant/Erratic)
-- **Anomaly Detection**: Technical, behavioral, and spatial anomaly flagging
-- **Research Suitability**: Automated tagging for different analysis types
-
-## 📈 Visualization & Documentation
-
-- **Interactive HTML Reports**: Comprehensive data exploration interface
-- **Real-time Statistics**: Dynamic data quality metrics
-- **Visual Flow Diagrams**: System architecture and data flow visualization
-- **Mobile-Responsive Design**: Access from any device
-
-## 🧪 Testing
-
-Run the comprehensive test suite:
-```bash
-# Run all tests
-python -m pytest tests/
-
-# Run specific test categories
-python tests/test_integration.py
-python tests/test_ml_integration.py
-python tests/performance_test.py
-```
-
-## 📚 Documentation
-
-- **User Guide**: `docs/user_guide/`
-- **Developer Guide**: `docs/developer_guide/`
-- **API Documentation**: `docs/about_app.md`
-- **Interactive Documentation**: Open `about.html` in your browser
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-
-## 🙏 Acknowledgments
-
-- research team for requirements and testing
-- Open source libraries that made this project possible
-
----
-
-For detailed usage instructions, see the [Unified Launcher Guide](UNIFIED_LAUNCHER_GUIDE.md).
+This repository is a data-engineering companion to the clinical ML work: it shows the upstream systems thinking needed before modeling can be trusted.
