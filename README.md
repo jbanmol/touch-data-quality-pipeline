@@ -1,5 +1,11 @@
 # Touch Data Quality Pipeline
 
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-Data_Processing-150458?logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-Quality_ML-F7931E?logo=scikit-learn&logoColor=white)
+![Google Sheets](https://img.shields.io/badge/Google_Sheets-Export-34A853?logo=google-sheets&logoColor=white)
+![Data Validation](https://img.shields.io/badge/Data_Validation-Research_Ready-0EA5E9)
+
 Data engineering and ML quality pipeline for touch-interaction research data. The system processes raw touch records, validates event sequences, engineers quality features, exports clean datasets, and produces visual reports for downstream research workflows.
 
 ## What This Demonstrates
